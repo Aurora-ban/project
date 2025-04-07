@@ -1,0 +1,62 @@
+
+
+
+
+// 前进
+void MoveForward(u16 time) {
+    Motor_Rotate(1, 2000, time);
+    Motor_Rotate(2, 2000, time);
+    Motor_Rotate(3, 2000, time);
+    Motor_Rotate(4, 2000, time);
+}
+
+// 后退
+void MoveBackward(u16 time) {
+    Motor_Rotate(1, 1000, time);
+    Motor_Rotate(2, 1000, time);
+    Motor_Rotate(3, 1000, time);
+    Motor_Rotate(4, 1000, time);
+    
+
+
+// 左移
+void MoveLeft(u16 time) {
+    Motor_Rotate(1, 1000, time);  // 左前反转
+    Motor_Rotate(2, 2000, time);  // 右前正转
+    Motor_Rotate(3, 2000, time);  // 左后正转
+    Motor_Rotate(4, 1000, time);  // 右后反转
+}
+
+// 右移
+void MoveLeft(u16 time) {
+    Motor_Rotate(1, 2000, time);  // 左前正转
+    Motor_Rotate(2, 1000, time);  // 右前反转
+    Motor_Rotate(3, 1000, time);  // 左后反转
+    Motor_Rotate(4, 2000, time);  // 右后正转
+}
+
+// 顺时针旋转
+void RotateCW(u16 time) {
+    Motor_Rotate(1, 1000, time);
+    Motor_Rotate(2, 2000, time);
+    Motor_Rotate(3, 1000, time);
+    Motor_Rotate(4, 2000, time);
+    
+
+
+// 逆时针旋转
+void RotateCCW(u16 time) {
+    Motor_Rotate(1, 2000, time);
+    Motor_Rotate(2, 1000, time);
+    Motor_Rotate(3, 2000, time);
+    Motor_Rotate(4, 1000, time);
+}
+
+// 停止
+void Motor_StopAll(void) {
+    Motor_Rotate(1, 1500, 0);
+    Motor_Rotate(2, 1500, 0);
+    Motor_Rotate(3, 1500, 0);
+    Motor_Rotate(4, 1500, 0);
+}
+
